@@ -1,0 +1,25 @@
+{
+  "name": "@inboxdeal/mcp-server",
+  "version": "1.0.0",
+  "description": "InboxDeal AI — Standard MCP Server for Gmail, Outlook, Claude Desktop & Cursor (1-Click B2B Email Quote Extraction, Ghosted Deal Radar, Google Sheets CRM TSV/CSV Export, 3-Line Follow-Up Drafts & <$50 Team Licensing)",
+  "type": "commonjs",
+  "main": "index.js",
+  "bin": {
+    "inboxdeal-mcp": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "node --test tests/mcp.test.mjs"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "gmail-to-sheets",
+    "crm-automation",
+    "sales-followup",
+    "deal-tracker",
+    "claude-desktop",
+    "cursor"
+  ],
+  "license": "MIT"
+}

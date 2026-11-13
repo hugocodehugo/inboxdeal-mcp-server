@@ -1,0 +1,25 @@
+# Smithery.ai / Glama.ai / PulseMCP Auto-Discovery Manifest
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    required: []
+    properties:
+      inboxdealApiKey:
+        type: string
+        description: "Optional InboxDeal Pro/Team License Key (leave empty for Free Tier: 3 free B2B Email Quote & Ghosted Deal Radar scans per day)."
+        default: ""
+      workEmail:
+        type: string
+        description: "Optional corporate email (@company.com) to unlock instant <$50 No-Approval $29/mo Team Expense Invoice & Manager Slack pitch generation."
+        default: ""
+  commandFunction:
+    |-
+    (config) => ({
+      command: 'npx',
+      args: ['-y', '@inboxdeal/mcp-server'],
+      env: {
+        ...(config.inboxdealApiKey ? { INBOXDEAL_API_KEY: config.inboxdealApiKey } : {}),
+        ...(config.workEmail ? { INBOXDEAL_WORK_EMAIL: config.workEmail } : {})
+      }
+    })
